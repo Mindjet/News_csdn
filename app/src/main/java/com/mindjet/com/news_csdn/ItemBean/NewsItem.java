@@ -1,27 +1,24 @@
-package com.mindjet.com.news_csdn.Bean;
+package com.mindjet.com.news_csdn.ItemBean;
 
 /**
  * @author Mindjet
- * @date 2016/6/29
+ * @date 2016/6/30
  */
 public class NewsItem {
 
     private int id;
-
     private String title;
-
     private String link;
-
     private String date;
-
     private String imgLink;
-
     private String content;
-
     private int newsType;
 
+    public NewsItem() {
+    }
+
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
@@ -29,7 +26,7 @@ public class NewsItem {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -37,7 +34,7 @@ public class NewsItem {
     }
 
     public String getLink() {
-        return link;
+        return this.link;
     }
 
     public void setLink(String link) {
@@ -45,7 +42,7 @@ public class NewsItem {
     }
 
     public String getDate() {
-        return date;
+        return this.date;
     }
 
     public void setDate(String date) {
@@ -53,7 +50,7 @@ public class NewsItem {
     }
 
     public String getImgLink() {
-        return imgLink;
+        return this.imgLink;
     }
 
     public void setImgLink(String imgLink) {
@@ -61,7 +58,7 @@ public class NewsItem {
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     public void setContent(String content) {
@@ -69,16 +66,15 @@ public class NewsItem {
     }
 
     public int getNewsType() {
-        return newsType;
+        return this.newsType;
     }
 
     public void setNewsType(int newsType) {
         this.newsType = newsType;
     }
 
-    @Override
     public String toString() {
-        return "NewsItem [id=" + id + ", title=" + title + ", link=" + link + ", date=" + date + ", imgLink=" + imgLink
-                + ", content=" + content + ", newsType=" + newsType + "]";
+        return "NewsItem [id=" + this.id + ", title=" + this.title + ", link=" + this.link + ", date=" + this.date + ", imgLink=" + this.imgLink + ", content=" + this.content + ", newsType=" + this.newsType + "]";
     }
+
 }

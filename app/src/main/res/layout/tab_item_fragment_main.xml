@@ -5,11 +5,13 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/id_tip"
-        android:text="111"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"/>
+    <com.mindjet.com.news_csdn.View.XListView
+        android:id="@+id/id_xlistView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#FFEDEDED"
+        android:cacheColorHint="#000000">
+
+    </com.mindjet.com.news_csdn.View.XListView>
 
 </LinearLayout>

@@ -1,16 +1,12 @@
 package com.mindjet.com.news_csdn;
 
-import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
-import com.mindjet.com.news_csdn.Bean.CommonException;
-import com.mindjet.com.news_csdn.Bean.NewsItem;
-import com.mindjet.com.news_csdn.Utils.Constraint;
+import com.mindjet.com.news_csdn.Adapter.TabAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
-import java.util.List;
 
 public class MainActivity extends FragmentActivity {
 

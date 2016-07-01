@@ -1,8 +1,10 @@
-package com.mindjet.com.news_csdn;
+package com.mindjet.com.news_csdn.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.mindjet.com.news_csdn.MainFragment;
 
 /**
  * @author Mindjet
