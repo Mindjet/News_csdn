@@ -85,10 +85,10 @@ public class NewsItemDao {
         
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        String start = offset+"";
-        String end = String.valueOf(offset+10);
+        String start = offset+"";   //取数据的起点
+        String num = 10+"";     //每次取十条
 
-        Cursor cursor = database.rawQuery(sql, new String[]{ ""+newsType, start, end});
+        Cursor cursor = database.rawQuery(sql, new String[]{ ""+newsType, start, num});
 
         NewsItem item = null;
 

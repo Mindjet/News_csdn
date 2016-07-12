@@ -31,8 +31,6 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
 
     private int newsType = Constraint.NEWS_TYPE_YEJIE;  //默认的栏目
 
-    private boolean isFirstIn = true;
-
     //当前页面
     private int currentPage = 1;
 
@@ -82,10 +80,7 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         xListView.setPullLoadEnable(true);
         xListView.setPullRefreshEnable(true);
 
-        if (isFirstIn) {
-            xListView.startRefresh();
-            isFirstIn = false;
-        }
+        xListView.startRefresh();
     }
 
 
@@ -188,9 +183,6 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
 
             List<NewsItem> newsItems = newsItemDao.list(newsType, currentPage);
             mAdapter.addAll(newsItems);
-
-            // TODO: 2016/7/12 I don't know why, but it is weird that when the currentPage is 2, the size is 20; 
-            System.out.println(newsItems.size());
 
             if (newsItems.size() == 0) {
                 currentPage--;
