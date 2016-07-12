@@ -12,7 +12,7 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/**由源码获取 标题 内容 图片链接等
  * @author Mindjet
  * @date 2016/6/30
  */

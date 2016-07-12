@@ -114,4 +114,8 @@ public class NewsItemAdapter extends BaseAdapter {
 
     }
 
+    public void setList(List<NewsItem> list) {
+        this.list = list;
+    }
+
 }
