@@ -2,10 +2,10 @@
   >Fetch the news from the www.csdn.net and group it by types.
 
 ##Introduction
-***
+
 
 ####Architecture
-***
+
 	User Interface
 		|__ XListView
 		|__ ViewPagerIndicator
@@ -29,8 +29,8 @@
 		|__ NewsItem
 
 
-#####Functions
-***
+####Functions
+
 	*XListView*: provides the pull-to-refresh and pull-to-loadmore function.
 	*ViewPagerIndicator*: an rubost plugin to provide smooth switch from fragment to fragment.
 
@@ -46,6 +46,6 @@
 	*NewsItem*: store the title, content, image link, link, date, news type of news.
 
 
-##### Screen shots
-***
+#### Screen shots
+
 	Coming soon.
