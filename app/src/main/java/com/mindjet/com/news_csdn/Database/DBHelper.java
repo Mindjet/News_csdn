@@ -1,4 +1,4 @@
-package com.mindjet.com.news_csdn;
+package com.mindjet.com.news_csdn.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

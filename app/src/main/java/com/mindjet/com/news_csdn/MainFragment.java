@@ -1,18 +1,20 @@
 package com.mindjet.com.news_csdn;
 
 import android.annotation.SuppressLint;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 
 import com.mindjet.com.news_csdn.Adapter.NewsItemAdapter;
 import com.mindjet.com.news_csdn.Biz.NewsItemBiz;
+import com.mindjet.com.news_csdn.Database.NewsItemDao;
 import com.mindjet.com.news_csdn.ItemBean.NewsItem;
 import com.mindjet.com.news_csdn.Util.Constraint;
 import com.mindjet.com.news_csdn.Util.NetUtil;
@@ -79,6 +81,20 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         xListView.setAdapter(mAdapter);
         xListView.setPullLoadEnable(true);
         xListView.setPullRefreshEnable(true);
+
+        xListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                NewsItem newsItem = mData.get(i-1);
+                String url = newsItem.getLink();
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                intent.putExtra("url", url);
+                startActivity(intent);
+
+            }
+        });
+
 
         xListView.startRefresh();
     }

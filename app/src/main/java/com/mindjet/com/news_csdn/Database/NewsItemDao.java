@@ -1,9 +1,10 @@
-package com.mindjet.com.news_csdn;
+package com.mindjet.com.news_csdn.Database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.mindjet.com.news_csdn.Database.DBHelper;
 import com.mindjet.com.news_csdn.ItemBean.NewsItem;
 
 import java.util.ArrayList;
