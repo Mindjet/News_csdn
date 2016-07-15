@@ -47,7 +47,6 @@ public class NewsItemAdapter extends BaseAdapter {
 
     }
 
-
     public void addAll(List<NewsItem> mData){
         this.list.addAll(mData);
     }

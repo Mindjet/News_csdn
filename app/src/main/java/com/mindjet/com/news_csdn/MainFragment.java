@@ -74,7 +74,10 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         newsItemDao = new NewsItemDao(getActivity());
 
         /**
-         * 初始化
+         * initial the XlistView
+         * ----attaching adapter
+         * ----enable pull-load/pull-refresh
+         * ----set listener
          */
         xListView = (XListView) getView().findViewById(R.id.id_xlistView);
         xListView.setXListViewListener(this);
@@ -94,7 +97,6 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
 
             }
         });
-
 
         xListView.startRefresh();
     }
@@ -158,7 +160,7 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
 
     }
 
-    //下拉时获取最新数据
+    //refresh when pull down
     private Integer refreshData() {
 
         currentPage = 1;
@@ -168,8 +170,8 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
             List<NewsItem> newsItems = biz.getNewsItems(newsType, currentPage);
             mAdapter.setList(newsItems);
 
-            newsItemDao.deleteAll(newsType);    //清空数据库
-            newsItemDao.addAll(newsItems);      //存入数据库
+            newsItemDao.deleteAll(newsType);    //clear database
+            newsItemDao.addAll(newsItems);      //add to database
 
         } else {
 
@@ -184,7 +186,7 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         return -1;
     }
 
-    //上拉时加载更多数据
+    //load more data when pull up
     private Integer loadMoreData() {
 
         currentPage += 1;
