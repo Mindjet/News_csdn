@@ -23,6 +23,7 @@ import com.mindjet.com.news_csdn.View.XListView;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Mindjet
@@ -85,10 +86,13 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         xListView.setPullLoadEnable(true);
         xListView.setPullRefreshEnable(true);
 
+        xListView.startRefresh();
+
         xListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                mData = mAdapter.getList();
                 NewsItem newsItem = mData.get(i-1);
                 String url = newsItem.getLink();
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
@@ -98,7 +102,6 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
             }
         });
 
-        xListView.startRefresh();
     }
 
 
@@ -176,7 +179,6 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         } else {
 
             List<NewsItem> newsItems = newsItemDao.list(newsType, currentPage);
-            mData = newsItems;
             if (newsItems != null) {
                 mAdapter.setList(newsItems);
             }

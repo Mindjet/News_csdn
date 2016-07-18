@@ -1,14 +1,11 @@
 package com.mindjet.com.news_csdn;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Looper;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.mindjet.com.news_csdn.Adapter.NewsDetailAdapter;
 import com.mindjet.com.news_csdn.ItemBean.NewsDetailPart;
@@ -24,14 +21,13 @@ import java.util.List;
  * @author Mindjet
  * @date 2016/7/13
  */
-public class DetailActivity extends Activity {
-
+public class DetailActivity extends FragmentActivity {
 
     private XListView xListView;
     private ProgressBar progressBar;
     private String url;
     private List<NewsDetailPart> parts = new ArrayList<>();
-    NewsDetailAdapter adapter;
+    private NewsDetailAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,23 +47,6 @@ public class DetailActivity extends Activity {
         adapter = new NewsDetailAdapter(this);
         xListView.setAdapter(adapter);
 
-//        xListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                NewsDetailPart part = parts.get(i-1);
-//                String imageLink = part.getImageLink();
-//
-//                if (imageLink!=null){
-//
-//                    Intent intent = new Intent(DetailActivity.this, ImageShowActivity.class);
-//                    intent.putExtra("imageLink", imageLink);
-//                    startActivity(intent);
-//
-//                }
-//            }
-//        });
-
         //start fetching data
         new MyAsyncTask().execute();
 
@@ -85,9 +64,10 @@ public class DetailActivity extends Activity {
 
             }catch (Exception e){
 
-                Looper.prepare();
-                Toast.makeText(DetailActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
-                Looper.loop();
+//                Looper.prepare();
+//                Toast.makeText(DetailActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
+//                Looper.loop();
+                e.printStackTrace();
 
             }
             return null;
@@ -96,11 +76,12 @@ public class DetailActivity extends Activity {
         @Override
         protected void onPostExecute(Void aVoid) {
 
-            if (parts!=null){
+            if (parts.size()!=0){
 
                 adapter.addParts(parts);
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
+                System.out.println(parts);
 
             }
 

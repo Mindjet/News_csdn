@@ -9,9 +9,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textStyle="italic"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:textColor="#606060"
         android:id="@+id/part_brief"/>
 </LinearLayout>

@@ -9,8 +9,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:textSize="30sp"
-        android:padding="5dp"
-        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textColor="#000"
+        android:padding="15dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/part_title"/>
 </LinearLayout>

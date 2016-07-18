@@ -6,6 +6,7 @@
     <com.mindjet.com.news_csdn.View.XListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="#fff"
         android:id="@+id/detaill_xlistview">
 
     </com.mindjet.com.news_csdn.View.XListView>

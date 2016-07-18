@@ -117,4 +117,6 @@ public class NewsItemAdapter extends BaseAdapter {
         this.list = list;
     }
 
+    public List<NewsItem> getList(){return this.list;}
+
 }

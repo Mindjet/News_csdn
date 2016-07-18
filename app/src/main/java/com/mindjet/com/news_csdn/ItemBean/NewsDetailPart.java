@@ -69,7 +69,7 @@ public class NewsDetailPart {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "title = "+title+", content = "+content+", imageLink = "+imageLink+", brief = "+brief;
+		return "[title = "+title+", content = "+content+", imageLink = "+imageLink+", brief = "+brief+"]";
 	}
 
 }

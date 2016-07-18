@@ -5,10 +5,13 @@
               android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
+        android:gravity="center_horizontal"
+        android:textColor="#000"
+        android:textStyle="bold"
         android:id="@+id/part_bold"
         android:padding="10dp"/>
 </LinearLayout>
