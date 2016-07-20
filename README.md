@@ -57,14 +57,14 @@
 
 * Homepage
 </br>
-<img src="screenshots/homepage1.png" width="250">
+<img src="screenshots/homepage1.png" width="280">
 
 * Homepage
 </br>
-<img src="screenshots/homepage2.png" width="250">
+<img src="screenshots/homepage2.png" width="280">
 
 * Detailpage
 </br>
-<img src="screenshots/detailpage.png" width="250">
+<img src="screenshots/detailpage.png" width="280">
 
 
