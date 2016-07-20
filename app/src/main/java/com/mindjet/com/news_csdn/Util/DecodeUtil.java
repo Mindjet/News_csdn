@@ -25,8 +25,6 @@ public class DecodeUtil {
 
 		Document document = Jsoup.parse(html);
 
-		System.out.println(document);
-
 		Element wrapper = document.getElementsByClass("wrapper").get(0);
 
 
@@ -53,7 +51,6 @@ public class DecodeUtil {
 			for (Element element : paragraph) {
 
 				part = new NewsDetailPart();
-				System.out.println(element.childNodeSize());
 
 				if (element.childNodeSize() == 1){
 

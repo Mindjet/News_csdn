@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -23,7 +24,6 @@ import com.mindjet.com.news_csdn.View.XListView;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Mindjet
@@ -42,6 +42,9 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
 
     //扩展的ListView
     private XListView xListView;
+
+    //加载圈
+    private ProgressBar progressBar;
 
     //数据适配器
     private NewsItemAdapter mAdapter;
@@ -74,6 +77,8 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
         mAdapter = new NewsItemAdapter(mData, getActivity());
         newsItemDao = new NewsItemDao(getActivity());
 
+        progressBar = (ProgressBar) getView().findViewById(R.id.id_progressBar);
+        progressBar.setVisibility(View.VISIBLE);
         /**
          * initial the XlistView
          * ----attaching adapter
@@ -146,7 +151,7 @@ public class MainFragment extends Fragment implements XListView.IXListViewListen
             if (result == TIP_ERROR_NO_NETWORK) {
                 Toast.makeText(getActivity(), "当前无网络链接", Toast.LENGTH_SHORT).show();
             }
-
+            progressBar.setVisibility(View.GONE);
             mAdapter.notifyDataSetChanged();
             xListView.stopRefresh();
             xListView.stopLoadMore();

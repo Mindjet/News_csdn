@@ -9,6 +9,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:lineSpacingExtra="5dp"
         android:padding="10dp"
         android:id="@+id/part_content"/>
 </LinearLayout>

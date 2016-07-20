@@ -1,10 +1,14 @@
 package com.mindjet.com.news_csdn;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import com.mindjet.com.news_csdn.Adapter.NewsDetailAdapter;
@@ -34,6 +38,8 @@ public class DetailActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_detail);
 
+        immersiveMode();
+
         final Intent intent = getIntent();
         Bundle extra = intent.getExtras();
         url = extra.getString("url");
@@ -49,6 +55,23 @@ public class DetailActivity extends FragmentActivity {
 
         //start fetching data
         new MyAsyncTask().execute();
+
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    private void immersiveMode() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+
+            Window window = getWindow();
+            window.setFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
+            );
+
+        }
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
     }
 
@@ -81,7 +104,6 @@ public class DetailActivity extends FragmentActivity {
                 adapter.addParts(parts);
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
-                System.out.println(parts);
 
             }
 

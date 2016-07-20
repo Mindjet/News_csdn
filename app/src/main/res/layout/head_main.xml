@@ -4,26 +4,39 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:orientation="horizontal"
-      android:gravity="center_vertical"
-      android:padding="10dp"
-      android:background="#4c5dba"
-      android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#292929"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-      <ImageView
-          android:layout_width="wrap_content"
-          android:src="@mipmap/ic_launcher"
-          android:layout_height="wrap_content"/>
 
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_marginLeft="10dp"
-          android:text="CSDN资讯"
-          android:textColor="#fff"
-          android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
 
-  </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/forbar"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="CSDN知道"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>
