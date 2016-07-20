@@ -14,6 +14,7 @@
 	News Resources
 		|__ DataUtil
 		|__ UrlUtil
+		|__ DecodeUtil
 		|__ AsyncTask
 
 	Storage System
@@ -24,9 +25,13 @@
 	Adapter
 		|__ TabAdapter
 		|__ NewsItemAdapter
+		|__ NewsDetailAdapter
 
 	Bean
 		|__ NewsItem
+		|__ NewsDetail
+		|__ NewsDetailPart
+		
 
 
 ####Functions
@@ -42,10 +47,24 @@
 
 	*TabAdapter*: attach fragments to the ViewPagerIndicator.
 	*NewsItemAdapter*: attach NewsItem to the XListView.
+	*NewsDetailAdapter*: attach NewsDetailPart to the XListView in DetailActivity.
 
 	*NewsItem*: store the title, content, image link, link, date, news type of news.
+	*NewsDetailPart*: store the title, content, image link of every paragrah.
 
 
-#### Screen shots
+#### Screenshots
 
-	Coming soon.
+* Homepage
+</br>
+<img src="screenshots/homepage1.png" width="250">
+
+* Homepage
+</br>
+<img src="screenshots/homepage2.png" width="250">
+
+* Detailpage
+</br>
+<img src="screenshots/detailpage.png" width="250">
+
+
