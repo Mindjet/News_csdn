@@ -3,6 +3,20 @@
 
 ##Introduction
 
+#### Screenshots
+
+* Homepage
+</br>
+<img src="screenshots/homepage1.png" width="280">
+
+* Homepage
+</br>
+<img src="screenshots/homepage2.png" width="280">
+
+* Detailpage
+</br>
+<img src="screenshots/detailpage.png" width="280">
+
 
 ####Architecture
 
@@ -52,19 +66,5 @@
 	*NewsItem*: store the title, content, image link, link, date, news type of news.
 	*NewsDetailPart*: store the title, content, image link of every paragrah.
 
-
-#### Screenshots
-
-* Homepage
-</br>
-<img src="screenshots/homepage1.png" width="280">
-
-* Homepage
-</br>
-<img src="screenshots/homepage2.png" width="280">
-
-* Detailpage
-</br>
-<img src="screenshots/detailpage.png" width="280">
 
 
