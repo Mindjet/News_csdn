@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mindjet.com.news_csdn.ItemBean.DetailContent;
+import com.mindjet.com.news_csdn.ItemBean.DetailPartType;
 import com.mindjet.com.news_csdn.ItemBean.NewsDetailPart;
 import com.mindjet.com.news_csdn.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -20,15 +22,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Implement an adapter for the XListView of DetailActivity
+ * Implement an adapter for the XListView of DetailActivity
  *
  * @author Mindjet
  * @date 2016/7/13
  */
 public class NewsDetailAdapter extends BaseAdapter {
 
-
-    private List<NewsDetailPart> parts = new ArrayList<>();
+    private List<DetailContent> contents = new ArrayList<>();
     private LayoutInflater inflater;
     private ImageLoader imageLoader = ImageLoader.getInstance();
     private DisplayImageOptions options;
@@ -43,18 +44,18 @@ public class NewsDetailAdapter extends BaseAdapter {
 
     }
 
-    public void addParts(List<NewsDetailPart> parts){
-        this.parts.addAll(parts);
+    public void addParts(List<DetailContent> contents) {
+        this.contents.addAll(contents);
     }
 
     @Override
     public int getCount() {
-        return parts.size();
+        return contents.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return parts.get(i);
+        return contents.get(i);
     }
 
     @Override
@@ -70,32 +71,32 @@ public class NewsDetailAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        NewsDetailPart part = parts.get(i);
+        DetailContent part = contents.get(i);
 
         ViewHolder holder;
 
-        if (view == null){
+        if (view == null) {
 
             holder = new ViewHolder();
-            switch (part.getType()){
+            switch (part.getType()) {
 
-                case NewsDetailPart.PartType.TITLE:
+                case DetailPartType.TITLE:
                     view = inflater.inflate(R.layout.detail_part_title, null);
                     holder.mTextView = (TextView) view.findViewById(R.id.part_title);
                     break;
-                case NewsDetailPart.PartType.BRIEF:
+                case DetailPartType.BRIEF:
                     view = inflater.inflate(R.layout.detail_part_brief, null);
                     holder.mTextView = (TextView) view.findViewById(R.id.part_brief);
                     break;
-                case NewsDetailPart.PartType.CONTENT:
+                case DetailPartType.CONTENT:
                     view = inflater.inflate(R.layout.detail_part_content, null);
                     holder.mTextView = (TextView) view.findViewById(R.id.part_content);
                     break;
-                case NewsDetailPart.PartType.IMAGELINK:
+                case DetailPartType.IMAGELINK:
                     view = inflater.inflate(R.layout.detail_part_image, null);
                     holder.mImageView = (ImageView) view.findViewById(R.id.part_image);
                     break;
-                case NewsDetailPart.PartType.BOLD:
+                case DetailPartType.BOLD:
                     view = inflater.inflate(R.layout.detai_part_bold, null);
                     holder.mTextView = (TextView) view.findViewById(R.id.part_bold);
                     break;
@@ -103,20 +104,20 @@ public class NewsDetailAdapter extends BaseAdapter {
             }
             view.setTag(holder);
 
-        }else {
+        } else {
             holder = (ViewHolder) view.getTag();
         }
 
-        if (part!=null){
+        if (part != null) {
 
-            switch (part.getType()){
+            switch (part.getType()) {
 
                 case NewsDetailPart.PartType.TITLE:
-                    holder.mTextView.setText(part.getTitle());
+                    holder.mTextView.setText(part.getContent());
                     break;
 
                 case NewsDetailPart.PartType.BRIEF:
-                    holder.mTextView.setText(part.getBrief());
+                    holder.mTextView.setText(part.getContent());
                     break;
 
                 case NewsDetailPart.PartType.CONTENT:
@@ -124,7 +125,7 @@ public class NewsDetailAdapter extends BaseAdapter {
                     break;
 
                 case NewsDetailPart.PartType.IMAGELINK:
-                    imageLoader.displayImage(part.getImageLink(), holder.mImageView, options);
+                    imageLoader.displayImage(part.getContent(), holder.mImageView, options);
                     break;
 
                 case NewsDetailPart.PartType.BOLD:
@@ -134,10 +135,12 @@ public class NewsDetailAdapter extends BaseAdapter {
 
         }
 
+
         return view;
+
     }
 
-    class ViewHolder{
+    class ViewHolder {
 
         TextView mTextView;
         ImageView mImageView;

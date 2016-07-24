@@ -9,28 +9,34 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AbsListView;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mindjet.com.news_csdn.Adapter.NewsDetailAdapter;
+import com.mindjet.com.news_csdn.ItemBean.DetailContent;
 import com.mindjet.com.news_csdn.ItemBean.NewsDetailPart;
 import com.mindjet.com.news_csdn.Util.DecodeUtil;
 import com.mindjet.com.news_csdn.View.XListView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Show the detail of specific news, implemented by XListView
+ * Show the detail of specific news, implemented by XListView
  *
  * @author Mindjet
  * @date 2016/7/13
  */
-public class DetailActivity extends FragmentActivity {
+public class DetailActivity extends FragmentActivity{
 
     private XListView xListView;
     private ProgressBar progressBar;
     private String url;
-    private List<NewsDetailPart> parts = new ArrayList<>();
+    private List<DetailContent> contents = new ArrayList<>();
     private NewsDetailAdapter adapter;
 
     @Override
@@ -44,7 +50,7 @@ public class DetailActivity extends FragmentActivity {
         Bundle extra = intent.getExtras();
         url = extra.getString("url");
 
-        progressBar = (ProgressBar)findViewById(R.id.detail_progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.detail_progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
         xListView = (XListView) findViewById(R.id.detaill_xlistview);
@@ -76,20 +82,17 @@ public class DetailActivity extends FragmentActivity {
     }
 
     //decode html and update the adapter data to setText or setImage.
-    class MyAsyncTask extends AsyncTask<Void, Void, Void>{
+    class MyAsyncTask extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
 
             try {
 
-                parts = DecodeUtil.getNews(url).getList();
+                contents = DecodeUtil.getNews(url);
 
-            }catch (Exception e){
+            } catch (Exception e) {
 
-//                Looper.prepare();
-//                Toast.makeText(DetailActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
-//                Looper.loop();
                 e.printStackTrace();
 
             }
@@ -99,13 +102,18 @@ public class DetailActivity extends FragmentActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
 
-            if (parts.size()!=0){
+            if (contents.size() != 0) {
 
-                adapter.addParts(parts);
+                adapter.addParts(contents);
                 adapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
+
+            } else {
+
+                Toast.makeText(DetailActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
 
             }
+
+            progressBar.setVisibility(View.GONE);
 
         }
     }

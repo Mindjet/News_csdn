@@ -18,22 +18,22 @@ public class UrlUtil {
             currentPage = currentPage > 0?currentPage:0;
             switch(newsType) {
                 case Constraint.NEWS_TYPE_YEJIE:
-                    urlStr = "http://news.csdn.net/news";
+                    urlStr = NEWS_LIST_URL_YEJIE;
                     break;
                 case Constraint.NEWS_TYPE_YIDONG:
-                    urlStr = "http://mobile.csdn.net/mobile";
+                    urlStr = NEWS_LIST_URL_YIDONG;
                     break;
                 case Constraint.NEWS_TYPE_YANFA:
-                    urlStr = "http://sd.csdn.net/sd";
+                    urlStr = NEWS_LIST_URL_YANFA;
                     break;
                 case Constraint.NEWS_TYPE_CHENGXUYUAN:
-                    urlStr = "http://programmer.csdn.net/programmer";
+                    urlStr = NEWS_LIST_URL_CHENGXUYUAN;
                     break;
                 case Constraint.NEWS_TYPE_YUNJISUAN:
-                    urlStr = "http://cloud.csdn.net/cloud";
+                    urlStr = NEWS_LIST_URL_YUNJISUAN;
                     break;
                 default:
-                    urlStr = "http://news.csdn.net/news";
+                    urlStr = NEWS_LIST_URL;
             }
 
             urlStr = urlStr + "/" + currentPage;

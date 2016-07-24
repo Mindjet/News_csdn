@@ -23,7 +23,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/forbar"/>
+                android:src="@mipmap/status_bar_icon"/>
 
             <TextView
                 android:layout_width="wrap_content"
