@@ -5,17 +5,21 @@
 
 #### Screenshots
 
-* Homepage
+* Welcomepage
 </br>
-<img src="screenshots/homepage1.png" width="280">
+<img src="screenshots/welcomepage.png" width="280">
 
-* Homepage
+* Homepage-1
 </br>
-<img src="screenshots/homepage2.png" width="280">
+<img src="screenshots/homepage2.0-1.png" width="280">
+
+* Homepage-2
+</br>
+<img src="screenshots/homepage2.0-2.png" width="280">
 
 * Detailpage
 </br>
-<img src="screenshots/detailpage.png" width="280">
+<img src="screenshots/detailpage2.0.png" width="280">
 
 
 ####Architecture
