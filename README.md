@@ -7,7 +7,7 @@
 
 * Welcomepage
 </br>
-<img src="screenshots/welcomepage.png" width="280">
+<img src="screenshots/welcomepage2.0.png" width="280">
 
 * Homepage-1
 </br>
