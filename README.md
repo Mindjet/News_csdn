@@ -54,21 +54,21 @@
 
 ####Functions
 
-	*XListView*: provides the pull-to-refresh and pull-to-loadmore function.
-	*ViewPagerIndicator*: an rubost plugin to provide smooth switch from fragment to fragment.
+	<strong>XListView</strong>: provides the pull-to-refresh and pull-to-loadmore function.
+	<strong>ViewPagerIndicator</strong>: an rubost plugin to provide smooth switch from fragment to fragment.
 
-	*UrlUtil*: return the url according to the news type.
-	*DataUtil*: use url to fetch html code and decode the news which consists of title, content, image link, link, date, news type.
-	*AsyncTask*: create working threads to access csdn.net and fetch data.
+	<strong>UrlUtil</strong>: return the url according to the news type.
+	<strong>DataUtil</strong>: use url to fetch html code and decode the news which consists of title, content, image link, link, date, news type.
+	<strong>AsyncTask</strong>: create working threads to access csdn.net and fetch data.
 
-	*NewsItemDao*: provide methods to add/delete/search/update items to dababase.
+	<strong>NewsItemDao</strong>: provide methods to add/delete/search/update items to dababase.
 
-	*TabAdapter*: attach fragments to the ViewPagerIndicator.
-	*NewsItemAdapter*: attach NewsItem to the XListView.
-	*NewsDetailAdapter*: attach NewsDetailPart to the XListView in DetailActivity.
+	<strong>TabAdapter</strong>: attach fragments to the ViewPagerIndicator.
+	<strong>NewsItemAdapter</strong>: attach NewsItem to the XListView.
+	<strong>NewsDetailAdapter</strong>: attach NewsDetailPart to the XListView in DetailActivity.
 
-	*NewsItem*: store the title, content, image link, link, date, news type of news.
-	*NewsDetailPart*: store the title, content, image link of every paragrah.
+	<strong>NewsItem</strong>: store the title, content, image link, link, date, news type of news.
+	<strong>NewsDetailPart</strong>: store the title, content, image link of every paragrah.
 
 
 
