@@ -1,7 +1,7 @@
-#News_csdn
-  >Fetch the news from the www.csdn.net and group it by types.
+# News_csdn
+  >Ths app fetches the news from the www.csdn.net and group it by types.
 
-##Introduction
+## Introduction
 
 #### Screenshots
 
@@ -22,7 +22,7 @@
 <img src="screenshots/detailpage2.0.png" width="280">
 
 
-####Architecture
+#### Table of Content
 
 	User Interface
 		|__ XListView
@@ -52,7 +52,7 @@
 		
 
 
-####Functions
+#### Functions
 
 **XListView**: provides the pull-to-refresh and pull-to-loadmore function.
 
